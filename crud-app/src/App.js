@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./App.css";
+import Main from "./pages/main"
 
 function App() {
   const [menuName, setMenuName] = useState("");
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* comment here 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -53,6 +55,8 @@ function App() {
           Learn React
         </a>
       </header>
+      */}
+      <Main />
     </div>
   );
 }
