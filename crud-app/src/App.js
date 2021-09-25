@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./App.css";
-import Main from "./pages/main"
+import Main from "./pages/Main/main"
 
 function App() {
   const [menuName, setMenuName] = useState("");
