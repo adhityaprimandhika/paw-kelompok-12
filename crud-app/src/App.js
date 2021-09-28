@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./App.css";
-import Main from "./pages/main"
+// import Main from "./pages/main"
+
 
 function App() {
   const [menuName, setMenuName] = useState("");
@@ -40,23 +40,43 @@ function App() {
 
   return (
     <div className="App">
-      {/* comment here 
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      */}
-      <Main />
+      {/* <Main /> */}
+      <h1>Order App with MERN</h1>
+      <label>Menu Name</label>
+      <input type="text" onChange={(event) => {
+        setMenuName(event.target.value);
+      }}>
+      </input>
+      <label>Price</label>
+      <input type="number" onChange={(event) => {
+        setPrice(event.target.value);
+      }}></input>
+      <label>Quantity</label>
+      <input type="number" onChange={(event) => {
+        setQuantity(event.target.value);
+      }}></input>
+      <button onClick={addToList}>Add to List</button>
+      <div className="menu-list">
+        <h1>Menu List</h1>
+        {menuList.map((val, key) => {
+          return (
+          <div key={key} className="menu"> 
+            <h1>{val.menuName}</h1>
+            <h2><span>Price: </span>{val.price}</h2>
+            <h2><span>Quantity: </span>{val.quantity}</h2>
+            <input type="text" placeholder="New Menu Name..." onChange={(event) => {
+                setNewMenuName(event.target.value);
+                }}></input>
+            <input type="number" onChange={(event) => {
+                setNewQuantity(event.target.value);
+                }} placeholder="Change Quantity...">
+            </input>
+            <button onClick={()=> updateMenu(val._id)}>Update</button>
+            <button onClick={()=> deleteMenu(val._id)}>Delete</button>
+          </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
