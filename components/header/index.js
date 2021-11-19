@@ -6,7 +6,8 @@ import { CartAlt } from '@styled-icons/boxicons-solid';
 const index = () => {
 	return (
 		<HeaderContainer>
-			<Logo>Starback</Logo>
+			<Logo className="mainLogo">Starback</Logo>
+			<p className="welcoming"></p>
 			<Options>
 				<OderQueue />
 				<Cart />
@@ -31,14 +32,14 @@ const Logo = styled.div`
 `;
 const Options = styled.div`
 	display: flex;
-	width: 5rem;
+	width: 4.6rem;
 	justify-content: space-between;
 `;
 
 // used ICONS
 
 const OderQueue = styled(Bill)`
-	height: 35px;
+	height: 32px;
 	cursor: pointer;
 	:hover {
 		color: #08c0be;
@@ -46,7 +47,7 @@ const OderQueue = styled(Bill)`
 `;
 
 const Cart = styled(CartAlt)`
-	height: 35px;
+	height: 32px;
 	cursor: pointer;
 	:hover {
 		color: #08c0be;

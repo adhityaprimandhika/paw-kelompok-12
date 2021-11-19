@@ -1,59 +1,51 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Coffee } from '@styled-icons/boxicons-solid';
-import { FoodToast } from '@styled-icons/fluentui-system-filled';
+// components
+import SubMenuOptions from './SubMenuOptions';
 
-const MenuOption = () => {
+const MenuOption = (props) => {
 	return (
-		<Container>
-			<button className="btnDrink">
-				<CoffeeDrinks /> Drinks
-			</button>
-			<button className="btnFood">
-				<ToastFoods /> Foods
-			</button>
-		</Container>
+		<Menu className="menu">
+			<p className="title">#HappyCoffee!</p>
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+			<SubMenuOptions title="hot coffee" />
+		</Menu>
 	);
 };
 
 export default MenuOption;
 
-const Container = styled.div`
-	width: 6vw;
+const Menu = styled.div`
+	width: 100%;
+	max-height: 88vh;
 	display: flex;
 	flex-direction: column;
-
-	.btnDrink,
-	.btnFood {
-		width: 100%;
-		height: 44vh;
+	background-color: aliceblue;
+	overflow-y: auto;
+	p {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border: none;
-		border-radius: 0;
-		cursor: pointer;
+		top: 0;
+		margin: 0 0 0rem 0;
+		position: sticky;
+		font-weight: 600;
 		color: #fafafa;
+		background-color: #009b5c;
+		min-height: 2.5rem;
+		align-items: center;
+		justify-content: center;
 	}
-	.btnDrink {
-		background-color: #129e9c;
-		:hover {
-			background-color: #0f9998;
-		}
-	}
-	.btnFood {
-		background-color: #08c0be;
-		:hover {
-			background-color: #0ebab8;
-		}
-	}
-`;
-// Some Icons
-
-const CoffeeDrinks = styled(Coffee)`
-	height: 40px;
-`;
-const ToastFoods = styled(FoodToast)`
-	height: 40px;
 `;

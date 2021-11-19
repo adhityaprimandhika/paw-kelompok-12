@@ -1,11 +1,9 @@
-import Header from '../components/header/index';
-import Sidebar from '../components/sidebar/index';
+import Onboarding from '../components/Onboarding/index';
 
 export default function Home() {
 	return (
 		<div className="Container">
-			<Header />
-			<Sidebar />
+			<Onboarding />
 		</div>
 	);
 }
