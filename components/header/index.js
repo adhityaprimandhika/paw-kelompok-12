@@ -1,17 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Bill } from '@styled-icons/remix-fill';
 import { CartAlt } from '@styled-icons/boxicons-solid';
+import { ArrowIosBackOutline } from '@styled-icons/evaicons-outline';
 
-const index = () => {
+const index = (props) => {
 	return (
 		<HeaderContainer>
-			<Logo className="mainLogo">Starback</Logo>
+			<LeftSection>
+				{/* //add condition here */}
+				<BackIcon />
+				<Logo className="mainLogo">Starback</Logo>
+			</LeftSection>
 			<p className="welcoming"></p>
-			<Options>
-				<OderQueue />
-				<Cart />
-			</Options>
+			<RightSection>
+				<CartIcon />
+			</RightSection>
 		</HeaderContainer>
 	);
 };
@@ -29,16 +32,19 @@ const HeaderContainer = styled.div`
 const Logo = styled.div`
 	font-weight: 800;
 	font-size: 30px;
+	margin: 0 0 0 0.5rem;
 `;
-const Options = styled.div`
+const LeftSection = styled.div`
+	display: flex;
+`;
+const RightSection = styled.div`
 	display: flex;
 	width: 4.6rem;
 	justify-content: space-between;
 `;
 
-// used ICONS
-
-const OderQueue = styled(Bill)`
+// Some Icons
+const BackIcon = styled(ArrowIosBackOutline)`
 	height: 32px;
 	cursor: pointer;
 	:hover {
@@ -46,7 +52,7 @@ const OderQueue = styled(Bill)`
 	}
 `;
 
-const Cart = styled(CartAlt)`
+const CartIcon = styled(CartAlt)`
 	height: 32px;
 	cursor: pointer;
 	:hover {
