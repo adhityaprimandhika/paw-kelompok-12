@@ -1,0 +1,14 @@
+{
+    "menu": [
+      {
+        "name": "Kopi Hitam",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "price": "19000"
+      },
+      {
+        "name": "Kopi Putih",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "price": "21000"
+      }
+    ]
+}
