@@ -15,7 +15,7 @@ mongoose.connect(
   }
 );
 
-app.post("/insert", async (req, res) => {
+app.post("/menu/insert", async (req, res) => {
   const menuName = req.body.menuName;
   const price = req.body.price;
   const quantity = req.body.quantity;
@@ -34,7 +34,7 @@ app.post("/insert", async (req, res) => {
   }
 });
 
-app.get("/read", async (req, res) => {
+app.get("/menu", async (req, res) => {
   MenuModel.find({}, (err, result) => {
     if (err) {
       res.send(err);
@@ -44,7 +44,7 @@ app.get("/read", async (req, res) => {
   });
 });
 
-app.put("/update", async (req, res) => {
+app.put("/menu/update", async (req, res) => {
   const newMenuName = req.body.newMenuName;
   const newQuantity = req.body.newQuantity;
   const id = req.body.id;
@@ -61,7 +61,7 @@ app.put("/update", async (req, res) => {
   }
 });
 
-app.delete("/delete/:id", async (req, res) => {
+app.delete("/menu/delete/:id", async (req, res) => {
   const id = req.params.id;
 
   await MenuModel.findByIdAndRemove(id).exec();
