@@ -3,6 +3,7 @@ import Axios from "axios";
 import "./App.css";
 import Navbar from './pages/component/Navbar'
 import Menu from './pages/component/Menu'
+import Radio from "./pages/component/Radiobutton";
 // import Main from "./pages/main"
 
 function App() {
@@ -101,6 +102,7 @@ function App() {
         })}
       </div>
       <Menu />
+      <Radio />
     </div>
   );
 }
