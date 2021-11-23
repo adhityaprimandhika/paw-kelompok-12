@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import Navbar from './Navbar';
+import Menu from './Menu'
+import { Provider } from "./Context";
+import { drinks } from "../../data.json";
 function Main(){
     return (
         <div>
@@ -8,9 +11,11 @@ function Main(){
             */}
             <div>
             <Navbar />
-            <h1>Food App</h1>
-            <p>Website under Construction</p>
+            <h1>Ourder</h1>
+            <p>Pesan Makanan Di Sini</p>
             </div>
+            <Menu />
+
             
             
         </div>
