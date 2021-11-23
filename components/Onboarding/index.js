@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
+import AdsCarousel from './AdsCarousel';
 import { Bill } from '@styled-icons/remix-fill';
 
 const index = () => {
 	return (
 		<Container className="container">
 			<div className="adsPromotionSection">
-				<PromotionReel className="promotionReel"></PromotionReel>
+				<AdsCarousel />
 				<Banner className="banner"></Banner>
 			</div>
 			<div className="takeOrderSection">
 				<TakeOrder className="takeOrder">
-					<img src={} alt=''/>
-					<p className='greetings'></p>
-					
+					<p className="greetings"></p>
 				</TakeOrder>
 			</div>
 		</Container>
@@ -32,8 +31,9 @@ const Container = styled.div`
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		height: 100%;
-		width: 50%;
+		background-color: aliceblue;
+		height: 50vh;
+		width: 50vw;
 	}
 `;
 const Banner = styled.div`
