@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./App.css";
+import Navbar from './pages/component/Navbar'
+import Menu from './pages/component/Menu'
 // import Main from "./pages/main"
 
 function App() {
@@ -39,6 +41,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       {/* <Main /> */}
       <h1>Order App with MERN</h1>
       <label>Menu Name</label>
@@ -97,6 +100,7 @@ function App() {
           );
         })}
       </div>
+      <Menu />
     </div>
   );
 }
