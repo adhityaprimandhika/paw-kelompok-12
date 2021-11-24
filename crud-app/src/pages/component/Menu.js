@@ -38,6 +38,12 @@ function Menu() {
     Axios.delete(`http://localhost:3001/menu/delete/${id}`);
   };
 
+  const Kopihitam = (event) =>{
+    setMenuName("Kopi Hitam");
+    setPrice(19000);
+    addToList();
+  }
+
   return (
     <div className="menus">
       <div className="item">
@@ -49,10 +55,10 @@ function Menu() {
           <input
             type="number"
             onChange={(event) => {
-              setQuantity(event.target.value);
+            setQuantity(event.target.value);
             }}
           ></input>
-          <button className="button-flat" onClick={addToList}>Add to List</button>
+          <button className="button-flat" onClick={Kopihitam}>Add to List</button>
         </div>
       </div>
       <div className="item">
@@ -80,6 +86,8 @@ function Menu() {
             type="number"
             onChange={(event) => {
               setQuantity(event.target.value);
+              //setMenuName()
+              //setPrice()
             }}
           ></input>
           <button className="button-flat" onClick={addToList}>Add to List</button>
