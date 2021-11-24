@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./App.css";
-import Navbar from './pages/component/Navbar'
-import Menu from './pages/component/Menu'
+import Navbar from "./pages/component/Navbar";
+import Menu from "./pages/component/Menu";
 // import Main from "./pages/main"
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
       <Navbar />
       {/* <Main /> */}
       <h1>Order App with MERN</h1>
-      <label>Menu Name</label>
+      {/* <label>Menu Name</label>
       <input
         type="text"
         onChange={(event) => {
@@ -65,9 +65,10 @@ function App() {
           setQuantity(event.target.value);
         }}
       ></input>
-      <button onClick={addToList}>Add to List</button>
+      <button onClick={addToList}>Add to List</button> */}
+      <Menu />
       <div className="menu-list">
-        <h1>Menu List</h1>
+        <h1>Order List</h1>
         {menuList.map((val, key) => {
           return (
             <div key={key} className="menu">
@@ -80,27 +81,11 @@ function App() {
                 <span>Quantity: </span>
                 {val.quantity}
               </h2>
-              <input
-                type="text"
-                placeholder="New Menu Name..."
-                onChange={(event) => {
-                  setNewMenuName(event.target.value);
-                }}
-              ></input>
-              <input
-                type="number"
-                onChange={(event) => {
-                  setNewQuantity(event.target.value);
-                }}
-                placeholder="Change Quantity..."
-              ></input>
-              <button onClick={() => updateMenu(val._id)}>Update</button>
               <button onClick={() => deleteMenu(val._id)}>Delete</button>
             </div>
           );
         })}
       </div>
-      <Menu />
     </div>
   );
 }
