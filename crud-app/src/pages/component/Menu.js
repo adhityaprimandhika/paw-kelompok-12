@@ -52,7 +52,7 @@ function Menu() {
               setQuantity(event.target.value);
             }}
           ></input>
-          <button onClick={addToList}>Add to List</button>
+          <button className="button-flat" onClick={addToList}>Add to List</button>
         </div>
       </div>
       <div className="item">
@@ -67,7 +67,7 @@ function Menu() {
               setQuantity(event.target.value);
             }}
           ></input>
-          <button onClick={addToList}>Add to List</button>
+          <button className="button-flat" onClick={addToList}>Add to List</button>
         </div>
       </div>
       <div className="item">
@@ -82,7 +82,7 @@ function Menu() {
               setQuantity(event.target.value);
             }}
           ></input>
-          <button onClick={addToList}>Add to List</button>
+          <button className="button-flat" onClick={addToList}>Add to List</button>
         </div>
       </div>
       <div className="item">
@@ -97,7 +97,7 @@ function Menu() {
               setQuantity(event.target.value);
             }}
           ></input>
-          <button onClick={addToList}>Add to List</button>
+          <button className="button-flat" onClick={addToList}>Add to List</button>
         </div>
       </div>
       <div className="item">
@@ -112,7 +112,7 @@ function Menu() {
               setQuantity(event.target.value);
             }}
           ></input>
-          <button onClick={addToList}>Add to List</button>
+          <button className="button-flat" onClick={addToList}>Add to List</button>
         </div>
       </div>
     </div>
