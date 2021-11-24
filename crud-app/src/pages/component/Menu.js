@@ -8,8 +8,8 @@ function Menu() {
   const [menuName, setMenuName] = useState("");
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
-  const [newMenuName, setNewMenuName] = useState("");
-  const [newQuantity, setNewQuantity] = useState(0);
+  /* const [newMenuName, setNewMenuName] = useState("");
+  const [newQuantity, setNewQuantity] = useState(0); */
   const [menuList, setMenuList] = useState([]);
 
   useEffect(() => {
@@ -26,23 +26,23 @@ function Menu() {
     });
   };
 
-  const updateMenu = (id) => {
+  /*   const updateMenu = (id) => {
     Axios.put("http://localhost:3001/menu/update", {
       id: id,
       newMenuName: newMenuName,
       newQuantity: newQuantity,
     });
-  };
+  }; */
 
   const deleteMenu = (id) => {
     Axios.delete(`http://localhost:3001/menu/delete/${id}`);
   };
 
-  const Kopihitam = (event) =>{
+  const Kopihitam = (event) => {
     setMenuName("Kopi Hitam");
     setPrice(19000);
     addToList();
-  }
+  };
 
   return (
     <div className="menus">
@@ -54,26 +54,21 @@ function Menu() {
           <label>Quantity</label>
           <input
             type="number"
-            onChange={(event) => {
-            setQuantity(event.target.value);
-            }}
-          ></input>
-          <button className="button-flat" onClick={Kopihitam}>Add to List</button>
-        </div>
-      </div>
-      <div className="item">
-        <img src={cof1} width="300" height="200" />
-        <div className="desc">
-          <p>Kopi Hitam</p>
-          <p>19000</p>
-          <label>Quantity</label>
-          <input
-            type="number"
+            min="1"
             onChange={(event) => {
               setQuantity(event.target.value);
             }}
           ></input>
-          <button className="button-flat" onClick={addToList}>Add to List</button>
+          <a
+            className="btn btn-primary"
+            onClick={() => {
+              setMenuName("Kopi Hitam");
+              setPrice(19000);
+              addToList();
+            }}
+          >
+            Add to List
+          </a>
         </div>
       </div>
       <div className="item">
@@ -84,13 +79,48 @@ function Menu() {
           <label>Quantity</label>
           <input
             type="number"
+            min="1"
+            onChange={(event) => {
+              setQuantity(event.target.value);
+            }}
+          ></input>
+          <a
+            className="btn btn-primary"
+            onClick={() => {
+              setMenuName("Kopi Hitam");
+              setPrice(19000);
+              addToList();
+            }}
+          >
+            Add to List
+          </a>
+        </div>
+      </div>
+      <div className="item">
+        <img src={cof1} width="300" height="200" />
+        <div className="desc">
+          <p>Kopi Hitam</p>
+          <p>19000</p>
+          <label>Quantity</label>
+          <input
+            type="number"
+            min="1"
             onChange={(event) => {
               setQuantity(event.target.value);
               //setMenuName()
               //setPrice()
             }}
           ></input>
-          <button className="button-flat" onClick={addToList}>Add to List</button>
+          <a
+            className="btn btn-primary"
+            onClick={() => {
+              setMenuName("Kopi Hitam");
+              setPrice(19000);
+              addToList();
+            }}
+          >
+            Add to List
+          </a>
         </div>
       </div>
       <div className="item">
@@ -101,11 +131,21 @@ function Menu() {
           <label>Quantity</label>
           <input
             type="number"
+            min="1"
             onChange={(event) => {
               setQuantity(event.target.value);
             }}
           ></input>
-          <button className="button-flat" onClick={addToList}>Add to List</button>
+          <a
+            className="btn btn-primary"
+            onClick={() => {
+              setMenuName("Kopi Hitam");
+              setPrice(19000);
+              addToList();
+            }}
+          >
+            Add to List
+          </a>
         </div>
       </div>
       <div className="item">
@@ -116,11 +156,21 @@ function Menu() {
           <label>Quantity</label>
           <input
             type="number"
+            min="1"
             onChange={(event) => {
               setQuantity(event.target.value);
             }}
           ></input>
-          <button className="button-flat" onClick={addToList}>Add to List</button>
+          <a
+            className="btn btn-primary"
+            onClick={() => {
+              setMenuName("Kopi Hitam");
+              setPrice(19000);
+              addToList();
+            }}
+          >
+            Add to List
+          </a>
         </div>
       </div>
     </div>
