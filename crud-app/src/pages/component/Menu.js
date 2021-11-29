@@ -30,6 +30,7 @@ function Menu() {
     }).then(function () {
       // successful response flow
       window.location.reload(false);
+      alert("Item added");
     });
   };
 
@@ -39,26 +40,31 @@ function Menu() {
 
   const list_menu = [
     {
+      id: 1,
       menuname: "Espresso",
       price: 18000,
       img: espresso,
     },
     {
+      id: 2,
       menuname: "Americano",
       price: 19000,
       img: americano,
     },
     {
+      id: 3,
       menuname: "Cappuccino",
       price: 20000,
       img: cappuccino,
     },
     {
+      id: 4,
       menuname: "Mochaccino",
       price: 21000,
       img: mochaccino,
     },
     {
+      id: 4,
       menuname: "Latte",
       price: 22000,
       img: latte,
@@ -81,6 +87,7 @@ function Menu() {
               <h6>{item.price}</h6>
               <label>Quantity</label>
               <input
+                id={"quantity" + item.id}
                 type="number"
                 min="1"
                 onChange={(event) => {
@@ -90,9 +97,16 @@ function Menu() {
               <a
                 className="btn btn-primary"
                 onClick={() => {
-                  setMenuName(item.menuname);
-                  setPrice(item.price);
-                  addToList();
+                  let input = document.getElementById(
+                    "quantity" + item.id
+                  ).value;
+                  if (isNaN(input) || input < 1) {
+                    alert("No item selected");
+                  } else {
+                    setMenuName(item.menuname);
+                    setPrice(item.price);
+                    addToList();
+                  }
                 }}
               >
                 Add to List

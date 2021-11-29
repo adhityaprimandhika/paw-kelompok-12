@@ -17,6 +17,7 @@ function Order() {
     }).then(function () {
       // successful response flow
       window.location.reload(false);
+      alert("Item updated");
     });
   };
 
@@ -24,6 +25,7 @@ function Order() {
     Axios.delete(`http://localhost:3001/order/delete/${id}`).then(function () {
       // successful response flow
       window.location.reload(false);
+      alert("Item deleted");
     });
   };
 
@@ -43,8 +45,10 @@ function Order() {
               {val.quantity}
             </h2>
             <input
+              id={"quantity" + val.id}
               type="number"
               min="1"
+              defaultValue={val.quantity}
               onChange={(event) => {
                 setNewQuantity(event.target.value);
               }}
@@ -52,8 +56,13 @@ function Order() {
             ></input>
             <button
               onClick={() => {
-                updateMenu(val._id);
-                //window.location.reload(false);
+                let input = document.getElementById("quantity" + val.id).value;
+                if (isNaN(input) || input < 1 || input == val.quantity) {
+                  input = val.quantity;
+                  alert("No changes");
+                } else {
+                  updateMenu(val._id);
+                }
               }}
             >
               Update
@@ -61,7 +70,6 @@ function Order() {
             <button
               onClick={() => {
                 deleteMenu(val._id);
-                //window.location.reload(false);
               }}
             >
               Delete
