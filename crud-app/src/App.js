@@ -4,16 +4,17 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Order from "./pages/component/Order";
-import Home from "./pages/component/Home";
+import Menu from "./pages/component/Menu";
 // import Main from "./pages/main"
 
+const getFreshModelObject = () => ({ orderDetails: [] });
+
 function App() {
-  const [menuName, setMenuName] = useState("");
+  /* const [menuName, setMenuName] = useState("");
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
-  /*
   const [newMenuName, setNewMenuName] = useState("");
-  const [newQuantity, setNewQuantity] = useState(0); */
+  const [newQuantity, setNewQuantity] = useState(0);*/
   const [menuList, setMenuList] = useState([]);
 
   useEffect(() => {
@@ -84,8 +85,8 @@ function App() {
       ></input>
       <button onClick={addToList}>Add to List</button> */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Order" element={<Order />} />
+          <Route path="/" element={<Menu />} />
+          <Route path="/order" element={<Order />} />
         </Routes>
       </div>
     </Router>

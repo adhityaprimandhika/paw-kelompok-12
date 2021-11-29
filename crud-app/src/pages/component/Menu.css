@@ -1,20 +1,18 @@
-div.item {
+.item {
   margin: 5px;
   border: 1px solid #ccc;
-  float: left;
   width: 250px;
   border-radius: 10px;
+  padding: 0;
 }
-div.menus img {
-  width: 100%;
-  height: auto;
+.image {
+  max-width: 250px;
+  max-height: 200px;
   border-radius: 10px;
+  align-items: center;
 }
 
 div.desc {
   padding: 5px;
   text-align: center;
-}
-div.menus {
-  width: 100%;
 }
