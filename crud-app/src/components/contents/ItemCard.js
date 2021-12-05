@@ -24,7 +24,7 @@ const ItemCard = (props) => {
           />
         </ImageSection>
         <DescSection>
-          <p className="descName">VanillaSwe atCreamCold asdasdasdas d</p>
+          <p className="descName">Vanilla Cream Cold</p>
           <p className="descPrice">$34</p>
         </DescSection>
       </ItemContainer>

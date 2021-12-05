@@ -1,7 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ItemCard from "./ItemCard";
 const index = () => {
+  const [userId, setUserId] = useState("");
+  const [productId, setProductId] = useState("");
+  const [quantity, setQuantity] = useState(0);
+  const [newProductId, setNewProductId] = useState("");
+  const [newQuantity, setNewQuantity] = useState(0);
+  const [cartList, setCartList] = useState([]);
+
+  useEffect(() => {
+    Axios.get("http://localhost:5000/api/carts").then((response) => {
+      setCartList(response.data);
+    });
+  }, []);
+
+  const addCart = () => {
+    Axios.post("http://localhost:5000/api/carts", {
+      userId: userId,
+      productId: productId,
+      quantity: quantity,
+    }).then(function () {
+      // successful response flow
+      window.location.reload(false);
+    });
+  };
+
+  const updateCart = (id) => {
+    Axios.put("http://localhost:5000/api/carts/update", {
+      id: id,
+      newProductId: newProductId,
+      newQuantity: newQuantity,
+    }).then(function () {
+      // successful response flow
+      window.location.reload(false);
+    });
+  };
+
+  const deleteCart = (id) => {
+    Axios.delete(`http://localhost:5000/api/carts/delete/${id}`).then(
+      function () {
+        // successful response flow
+        window.location.reload(false);
+      }
+    );
+  };
+
+  let navigate = useNavigate();
   return (
     <CheckoutContainer>
       <OrderSection>
@@ -19,7 +65,14 @@ const index = () => {
       </OrderSection>
       <PaymentSection>
         <PaymentCardSection>
-          <BuyButton>Buy Now</BuyButton>
+          <BuyButton
+            onClick={() => {
+              add();
+              navigate("/");
+            }}
+          >
+            Buy Now
+          </BuyButton>
         </PaymentCardSection>
       </PaymentSection>
     </CheckoutContainer>

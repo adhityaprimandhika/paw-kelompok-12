@@ -1,4 +1,6 @@
 import React from "react";
+import React, { useState } from "react";
+import Axios from "axios";
 import styled from "styled-components";
 
 const ItemCard = () => {
@@ -11,9 +13,7 @@ const ItemCard = () => {
         />
       </ImageSection>
       <DescSection>
-        <p className="descTitle">
-          VanillaSwe atCreamCold asdasasddfdsfdsf f dsfdsadsdsa sd
-        </p>
+        <p className="descTitle">Vanilla Cream Cold</p>
         <p className="descPrice">$34</p>
       </DescSection>
     </ItemContainer>

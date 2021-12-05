@@ -1,28 +1,38 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Time } from "@styled-icons/boxicons-solid";
+import Order from "../../Order";
 
 const Form = () => {
   return (
-    <Container>
-      <OrderAwait>
-        <OrderIcon />
-        <p className="awaitDescription">1 Order to go</p>
-      </OrderAwait>
-      <img
-        className="mainLogo"
-        src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png"
-        alt="starback"
-      />
-      <h2 className="title">Welkam to Starback</h2>
-      <input
-        className="customerName"
-        type="text"
-        placeholder="Enter your Name"
-      ></input>
-      <p className="description">15 digit name</p>
-      <OnBoardButton className="orderButton">Order Now</OnBoardButton>
-    </Container>
+    <Router>
+      <Container>
+        <OrderAwait>
+          <OrderIcon />
+          <p className="awaitDescription">1 Order to go</p>
+        </OrderAwait>
+        <img
+          className="mainLogo"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png"
+          alt="starback"
+        />
+        <h2 className="title">Welkam to Starback</h2>
+        <input
+          className="customerName"
+          type="text"
+          placeholder="Enter your Name"
+        ></input>
+        <p className="description">15 digit name</p>
+        <OnBoardButton className="orderButton">
+          <Link to="/Order">Order Now</Link>
+        </OnBoardButton>
+      </Container>
+
+      <Routes>
+        <Route path="/api/orders" element={<Order />} />
+      </Routes>
+    </Router>
   );
 };
 
