@@ -95,7 +95,7 @@ function Menu() {
                 }}
               ></input>
               <a
-                className="btn btn-primary"
+                className="btn btn-secondary"
                 onClick={() => {
                   let input = document.getElementById(
                     "quantity" + item.id

@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
   background-image: url(https://images.unsplash.com/photo-1526488807855-309186804587?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
 }
 ul {
   list-style-type: none;
@@ -44,9 +47,14 @@ button {
   height: 250px;
   border: 2px solid white;
   margin: 10px;
+  align-items: center;
 }
-h1{
+.title {
   color:#ffffff;
+  margin: 1rem 0 1rem 0;
+  width:100vw;
+  height:10vh;
+  align-items: center;
 }
 .menu h1 {
   font-size: 24px;
@@ -56,6 +64,21 @@ h1{
 .menu h2 {
   font-size: 20px;
   color: #ffffff;
+}
+.btn-primary{
+  margin: 10px;
+  width: 40vw;
+  height: 7vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.btn-secondary{
+  border: 1px solid #008CBA;  
+    background: transparent;          
+    color: #008CBA;                   
+    font-size: 16px;                  
+    padding: 0.5em 1em 0.5em 1em;   
 }
 
 .App-logo {

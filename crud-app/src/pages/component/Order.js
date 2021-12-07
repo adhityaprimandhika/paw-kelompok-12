@@ -31,7 +31,7 @@ function Order() {
 
   return (
     <div className="menu-list">
-      <h1>Order List</h1>
+      <h1 className="title">Order List</h1>
       {menuList.map((val, key) => {
         return (
           <div key={key} className="menu">
