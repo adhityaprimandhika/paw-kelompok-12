@@ -61,7 +61,7 @@ function App() {
           </ul>
         </div>
         {/* <Main /> */}
-        <h1 className="Title">Ourder</h1>
+        <h1>Ourder</h1>
         {/* <label>Menu Name</label>
       <input
         type="text"
