@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "devStart": "nodemon app.js"
+    "devStart": "nodemon app.js",
+    "heroku-postbuild": "cd crud-app && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
