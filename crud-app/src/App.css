@@ -4,8 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(https://images.unsplash.com/photo-1526488807855-309186804587?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);
 }
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -42,16 +42,20 @@ button {
 .menu {
   width: 500px;
   height: 250px;
-  border: 2px solid black;
+  border: 2px solid white;
   margin: 10px;
 }
-
+h1{
+  color:#ffffff;
+}
 .menu h1 {
   font-size: 24px;
+  color: white;
 }
 
 .menu h2 {
   font-size: 20px;
+  color: #ffffff;
 }
 
 .App-logo {
