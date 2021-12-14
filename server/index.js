@@ -66,6 +66,6 @@ app.delete("/order/delete/:id", async (req, res) => {
   res.send("deleted");
 });
 
-app.listen(3001, () => {
-  console.log("Server running on port 3001...");
+app.listen(process.env.PORT || 5000, () => {
+  console.log("Server running on port 5000...");
 });

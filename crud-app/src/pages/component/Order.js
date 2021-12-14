@@ -5,13 +5,13 @@ function Order() {
   const [menuList, setMenuList] = useState([]);
   const [newQuantity, setNewQuantity] = useState(0);
   useEffect(() => {
-    Axios.get("http://localhost:3001/order").then((response) => {
+    Axios.get("http://localhost:5000/order").then((response) => {
       setMenuList(response.data);
     });
   }, []);
 
   const updateMenu = (id) => {
-    Axios.put("http://localhost:3001/order/update", {
+    Axios.put("http://localhost:5000/order/update", {
       id: id,
       newQuantity: newQuantity,
     }).then(function () {
@@ -22,7 +22,7 @@ function Order() {
   };
 
   const deleteMenu = (id) => {
-    Axios.delete(`http://localhost:3001/order/delete/${id}`).then(function () {
+    Axios.delete(`http://localhost:5000/order/delete/${id}`).then(function () {
       // successful response flow
       window.location.reload(false);
       alert("Item deleted");

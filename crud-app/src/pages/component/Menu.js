@@ -12,18 +12,9 @@ function Menu() {
   const [menuName, setMenuName] = useState("");
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
-  /* const [newMenuName, setNewMenuName] = useState("");*/
-  /* const [newQuantity, setNewQuantity] = useState(0);
-  const [menuList, setMenuList] = useState([]); */
-
-  /* useEffect(() => {
-    Axios.get("http://localhost:3001/Menu").then((response) => {
-      setMenuList(response.data);
-    });
-  }, []); */
 
   const addToList = () => {
-    Axios.post("http://localhost:3001/insert", {
+    Axios.post("http://localhost:5000/insert", {
       menuName: menuName,
       price: price,
       quantity: quantity,
@@ -33,10 +24,6 @@ function Menu() {
       alert("Item added");
     });
   };
-
-  /* const deleteMenu = (id) => {
-    Axios.delete(`http://localhost:3001/menu/delete/${id}`);
-  }; */
 
   const list_menu = [
     {
